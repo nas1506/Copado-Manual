@@ -1,0 +1,45 @@
+# Copado YML repository settings
+# This file will allow users to process files within a repository
+# A use case for this is to remove offending XML tags that will make a file not deployable.
+# E.g. remove all ManageSandbox user permissions from a profile, since this user permission 
+# only exists on production environments and will fail when trying to be deployed to sandboxes.
+# E.g. remove FLS of deprecated fields, etc
+
+
+regex_lib:
+    field: '(?s)(.[^\n]+<fields>(?:(?!<fields>).)*?<fullName>___REPLACEVALUE___</fullName>(?:(?!<fields>).)*?</fields>)'
+    user-permission: '(?s)(.[^\n]+<userPermissions>(?:(?!<userPermissions>).)*?<name>___REPLACEVALUE___</name>(?:(?!<userPermissions>).)*?</userPermissions>)'
+    field-permission: '(?s)(.[^\n]+<fieldPermissions>(?:(?!<fieldPermissions>).)*?<field>___REPLACEVALUE___</field>(?:(?!<fieldPermissions>).)*?</fieldPermissions>)'
+    tab-permission: '(?s)(.[^\n]+<applicationVisibilities>(?:(?!<applicationVisibilities>).)*?<application>___REPLACEVALUE___</application>(?:(?!<applicationVisibilities>).)*?</applicationVisibilities>)'
+    class-permission: '(?s)(.[^\n]+<classAccesses>(?:(?!<classAccesses>).)*?<apexClass>___REPLACEVALUE___</apexClass>(?:(?!<classAccesses>).)*?</classAccesses>)'
+    page-permission: '(?s)(.[^\n]+<pageAccesses>(?:(?!<pageAccesses>).)*?<apexPage>___REPLACEVALUE___</apexPage>(?:(?!<pageAccesses>).)*?</pageAccesses>)'
+    object-permission: '(?s)(.[^\n]+<objectPermissions>(?:(?!<objectPermissions>).)*?<object>___REPLACEVALUE___</object>(?:(?!<objectPermissions>).)*?</objectPermissions>)'
+    recordtype-permission: '(?s)(.[^\n]+<recordTypeVisibilities>(?:(?!<recordTypeVisibilities>).)*?<recordType>___REPLACEVALUE___</recordType>(?:(?!<recordTypeVisibilities>).)*?</recordTypeVisibilities>)'
+    all-user-permissions: '(<userPermissions>[\s\S]*</userPermissions>)'
+    field-translation: '(?s)(.[^\n]+<fields>(?:(?!<fields>).)*?<name>___REPLACEVALUE___</name>(?:(?!<fields>).)*?</fields>)'
+
+rules:
+    invalid_fields:
+        file_names:
+            - 'Account.object'
+            - 'Contact.object'
+            - 'Lead.object'
+        regex_name: 'field' # name must exist on the regex-lib section
+        replace_values:
+            - Jigsaw
+            - SicDesc
+        branches: # no branch means all branches. otherwise is limited to the one listed below
+    invalid_user_permissions:
+        extensions:
+            - profile
+            - permissionset
+        regex_name: 'user-permission' # name must exist on the regex-lib section
+        replace_values:
+            - ActivateOrder
+            - ManageSandboxes
+            - EditBillingInfo
+            - ManageRealm
+            - ManageCopado3
+            - ManageCopado4
+            - ManageCopado5
+        branches: # no branch means all branches. otherwise is limited to the one listed below
