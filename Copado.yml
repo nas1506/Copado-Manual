@@ -19,27 +19,25 @@ regex_lib:
     field-translation: '(?s)(.[^\n]+<fields>(?:(?!<fields>).)*?<name>___REPLACEVALUE___</name>(?:(?!<fields>).)*?</fields>)'
 
 rules:
-    invalid_fields:
-        file_names:
+    invalid_fields: # choose a rule name without spaces or special characters
+        file_names: # list exact file names or empty to apply to any file name
             - 'Account.object'
             - 'Contact.object'
             - 'Lead.object'
         regex_name: 'field' # name must exist on the regex-lib section
-        replace_values:
+        replace_values: # for each value the regex will apply, using this value on the regex __REPLACEVALUE__ 
             - Jigsaw
             - SicDesc
         branches: # no branch means all branches. otherwise is limited to the one listed below
-    invalid_user_permissions:
-        extensions:
+    invalid_user_permissions: # choose a rule name without spaces or special characters
+        extensions: # list extensions or empty to apply to any extension
             - profile
             - permissionset
         regex_name: 'user-permission' # name must exist on the regex-lib section
-        replace_values:
+        replace_values: # for each value the regex will apply, using this value on the regex __REPLACEVALUE__ 
             - ActivateOrder
             - ManageSandboxes
             - EditBillingInfo
             - ManageRealm
-            - ManageCopado3
-            - ManageCopado4
-            - ManageCopado5
         branches: # no branch means all branches. otherwise is limited to the one listed below
+        replace_with: # leave it blank to remove (replace by nothing) the matching regex, or enter a text to be replaced.
