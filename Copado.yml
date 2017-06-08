@@ -41,3 +41,12 @@ rules:
             - ManageRealm
         branches: # no branch means all branches. otherwise is limited to the one listed below
         replace_with: # leave it blank to remove (replace by nothing) the matching regex, or enter a text to be replaced.
+    invalid_class_permissions: # choose a rule name without spaces or special characters
+        extensions: # list extensions or empty to apply to any extension
+            - profile
+            - permissionset
+        regex_name: 'class-permission' # name must exist on the regex-lib section
+        replace_values: # for each value the regex will apply, using this value on the regex __REPLACEVALUE__ 
+            - TH1__\w+ # this will avoid all class permission for the managed package TH1,
+            - xx__\w+ # change xx for the namespace for any managed package. Credits to Bobby White for this tip!!!
+        branches: # no branch means all branches. otherwise is limited to the one listed below
