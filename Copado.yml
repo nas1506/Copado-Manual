@@ -49,6 +49,6 @@ rules:
         replace_values: # for each value the regex will apply, using this value on the regex __REPLACEVALUE__ 
             - TH1__\w+ # this will avoid all class permission for the managed package TH1,
             - xx__\w+ # change xx for the namespace for any managed package. Credits to Bobby White for this tip!!!
-            - classNameX
-            - namespaceX__classNameY
+            - classNameX # just 1 of your own class
+            - namespaceX__classNameY # just 1 class which is part of the managed package namespaceX with name classNameY
         branches: # no branch means all branches. otherwise is limited to the one listed below
