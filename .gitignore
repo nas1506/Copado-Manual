@@ -3,6 +3,7 @@ package.xml
 
 #Managed packages can trigger the installation or uninstallation of applications, it is  
 #recommended to manage this outside git
+
 installedPackages/*
 
 #if you are not customizing a managed package, you can keep your repository clean by ignoring 
@@ -13,6 +14,7 @@ installedPackages/*
 #managed components. Creation of managed components is not permitted by the API.
 #It is recommended that you ignore managed components that cannot be modified 
 #since there is no need to track them in Git, like for example:
+
 classes/copado__*
 triggers/copado__*
 pages/copado__*
@@ -23,18 +25,21 @@ workflows/copado__*
 #Otherwise ignore profiles and permission sets until you are ready for it. 
 #You can deploy profiles and permission sets using Copado Deployer steps: Full profiles and Full Permission sets.
 # Below is how to ignore them
-profiles/*
-permissionsets/*
+
+# profiles/*
+# permissionsets/*
 
 #Translations are complex since get updated indirectly across multiple files, they can make a deployment fail
 #if a field is translated in source and it doesn't exist on destination. 
 #If you are committing incrementally new fields and new Translations you can track them in Git, just be careful. 
 #If you choose  to ignore them in Git, you can always create a deployment with the Copado Deployer "Translation" Step. 
-translations/*
-objectTranslations/*
+
+# translations/*
+# objectTranslations/*
 
 #Sites which has Domain mapping has environment specific information. 
 #Make sure you setup Copado Environment Variables to make sites config files environment agnostic.
 #Until the above is achieved, you can ignore them as follows
-sites/*
-siteDotComSites/*
+
+# sites/*
+# siteDotComSites/*
