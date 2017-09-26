@@ -10,7 +10,7 @@ public class AccountOperations {
 	}
         
         // Avoid DML Statements inside loops
-        for (Integer i = 0; i < 10; i++) {
+        for (Integer i = 0; i < 1; i++) {
 	    update a;
 	}
        	
