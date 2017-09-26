@@ -6,12 +6,12 @@ public class AccountOperations {
         
         // Avoid SOQL inside loops
         for (Integer i = 0; i < 10; i++) {
-		List<Account> accounts = [SELECT Id FROM Account];
+	    List<Account> accounts = [SELECT Id FROM Account];
 	}
         
         // Avoid DML Statements inside loops
         for (Integer i = 0; i < 10; i++) {
-		update a;
+	    update a;
 	}
        	
         return a;
