@@ -11,7 +11,7 @@ regex_lib:
     user-permission: '(?s)(<userPermissions>(?:(?!<userPermissions>).)*?<name>___REPLACEVALUE___</name>(?:(?!<userPermissions>).)*?</userPermissions>)'
     field-permission: '(?s)(<fieldPermissions>(?:(?!<fieldPermissions>).)*?<field>___REPLACEVALUE___</field>(?:(?!<fieldPermissions>).)*?</fieldPermissions>)'
     app-permission: '(?s)(<applicationVisibilities>(?:(?!<applicationVisibilities>).)*?<application>___REPLACEVALUE___</application>(?:(?!<applicationVisibilities>).)*?</applicationVisibilities>)'
-    tab-permission: '(?s)(<tabVisibilities>(?:(?!<tabVisibilities>).)*?<tab>___REPLACEVALUE___</tab>(?:(?!<tabVisibilities>).)*?</tabVisibilities>)'
+    tab-permission: '(?s)(<tabSettings>(?:(?!<tabSettings>).)*?<tab>___REPLACEVALUE___</tab>(?:(?!<tabSettings>).)*?</tabSettings>)'
     class-permission: '(?s)(<classAccesses>(?:(?!<classAccesses>).)*?<apexClass>___REPLACEVALUE___</apexClass>(?:(?!<classAccesses>).)*?</classAccesses>)'
     page-permission: '(?s)(<pageAccesses>(?:(?!<pageAccesses>).)*?<apexPage>___REPLACEVALUE___</apexPage>(?:(?!<pageAccesses>).)*?</pageAccesses>)'
     object-permission: '(?s)(<objectPermissions>(?:(?!<objectPermissions>).)*?<object>___REPLACEVALUE___</object>(?:(?!<objectPermissions>).)*?</objectPermissions>)'
