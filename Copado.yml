@@ -16,7 +16,7 @@ regex_lib:
     page-permission: '(?s)(<pageAccesses>(?:(?!<pageAccesses>).)*?<apexPage>___REPLACEVALUE___</apexPage>(?:(?!<pageAccesses>).)*?</pageAccesses>)'
     object-permission: '(?s)(<objectPermissions>(?:(?!<objectPermissions>).)*?<object>___REPLACEVALUE___</object>(?:(?!<objectPermissions>).)*?</objectPermissions>)'
     recordtype-permission: '(?s)(<recordTypeVisibilities>(?:(?!<recordTypeVisibilities>).)*?<recordType>___REPLACEVALUE___</recordType>(?:(?!<recordTypeVisibilities>).)*?</recordTypeVisibilities>)'
-    all-user-permissions: '(<userPermissions>[\s\S]*</userPermissions>)'
+    remove-simple-tag: '(<___REPLACEVALUE___>[\s\S]*</___REPLACEVALUE___>)'
     field-translation: '(?s)(<fields>(?:(?!<fields>).)*?<name>___REPLACEVALUE___</name>(?:(?!<fields>).)*?</fields>)'
 
 rules:
@@ -53,3 +53,11 @@ rules:
             - classNameX # just 1 of your own class
             - namespaceX__classNameY # just 1 class which is part of the managed package namespaceX with name classNameY
         branches: # no branch means all branches. otherwise is limited to the one listed below
+    remove-all-user-permissions:
+        extensions:
+            - profile
+        regex_name: 'remove-simple-tag'
+        replace_values:
+            - userPermissions
+        replace_with: 
+        branches:
