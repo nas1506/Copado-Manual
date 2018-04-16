@@ -21,7 +21,7 @@ regex_lib:
 
 rules:
     invalid_fields: # choose a rule name without spaces or special characters
-        file_names: # list exact file names or empty to apply to any file name
+        file_names: # list exact file names
             - 'Account.object'
             - 'Contact.object'
             - 'Lead.object'
@@ -31,7 +31,7 @@ rules:
             - SicDesc
         branches: # no branch means all branches. otherwise is limited to the one listed below
     invalid_user_permissions: # choose a rule name without spaces or special characters
-        extensions: # list extensions or empty to apply to any extension
+        extensions: # list extensions
             - profile
             - permissionset
         regex_name: 'user-permission' # name must exist on the regex-lib section
@@ -43,7 +43,7 @@ rules:
         branches: # no branch means all branches. otherwise is limited to the one listed below
         replace_with: # leave it blank to remove (replace by nothing) the matching regex, or enter a text to be replaced.
     invalid_class_permissions: # choose a rule name without spaces or special characters
-        extensions: # list extensions or empty to apply to any extension
+        extensions: # list extensions
             - profile
             - permissionset
         regex_name: 'class-permission' # name must exist on the regex-lib section
