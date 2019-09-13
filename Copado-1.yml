@@ -1,4 +1,3 @@
---- 
 regex_lib: 
   remove-simple-tag: '(?s)(\n\s*<___REPLACEVALUE___>[\s\S]*?</___REPLACEVALUE___>)'
 rules:
