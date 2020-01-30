@@ -41,6 +41,7 @@ regex_lib:
 #    recordtype-permission: '(?s)(\n\s*<recordTypeVisibilities>(?:(?!<recordTypeVisibilities>).)*?<recordType>___REPLACEVALUE___</recordType>(?:(?!<recordTypeVisibilities>).)*?</recordTypeVisibilities>)'
 #    field-translation: '(?s)(\n\s*<fields>(?:(?!<fields>).)*?<name>___REPLACEVALUE___</name>(?:(?!<fields>).)*?</fields>)'
 #    layout-assignment: '(?s)(\n\s*<layoutAssignments>(?:(?!<layoutAssignments>).)*?<layout>___REPLACEVALUE___</layout>(?:(?!<layoutAssignments>).)*?</layoutAssignments>)'
+#    tab-visibilities: '(?s)(\n\s*<tabVisibilities>(?:(?!<tabVisibilities>).)*?<tab>___REPLACEVALUE___</tab>(?:(?!<tabVisibilities>).)*?</tabVisibilities>)'
 
 # rules provide context to which files a reg ex should be applied, on which branch and what to do with the finding. replace or remove. 
 # in addition rules sharpen the broader scope of the base reg ex towards a single or specific set of items.
